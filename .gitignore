@@ -3,6 +3,8 @@
 !README.md
 !.gitignore
 
+!mimeapps.list
+
 !yay/
 !yay/**
 
