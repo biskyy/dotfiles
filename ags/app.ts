@@ -2,7 +2,6 @@ import { App } from "astal/gtk3";
 import style from "src/style.scss";
 import { exec, monitorFile } from "astal";
 import PanelManager from "src/panel-manager";
-import { PanelID } from "src/panel";
 
 globalThis.PanelManager = PanelManager;
 
