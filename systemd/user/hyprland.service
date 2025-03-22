@@ -1,0 +1,8 @@
+[Unit]
+Description=Hyprland Window Manager
+
+[Service]
+ExecStart=/usr/bin/Hyprland
+
+[Install]
+WantedBy=default.target
