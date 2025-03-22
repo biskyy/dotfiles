@@ -2,6 +2,7 @@ import { App } from "astal/gtk3";
 import style from "src/style.scss";
 import { exec, monitorFile } from "astal";
 import PanelManager from "src/panel-manager";
+import OSD from "src/osd/osd";
 
 globalThis.PanelManager = PanelManager;
 
@@ -27,6 +28,7 @@ monitorFile(`${SRC}/src/widgets/powermenu/powermenu.scss`, () =>
 );
 monitorFile(`${SRC}/src/widgets/glance/glance.scss`, () => recompileCSS());
 monitorFile(`${SRC}/src/widgets/audio/audio.scss`, () => recompileCSS());
+monitorFile(`${SRC}/src/osd/osd.scss`, () => recompileCSS());
 
 // ---- //
 
@@ -36,5 +38,6 @@ App.start({
   css: style,
   main() {
     PanelManager.spawnBar();
+    OSD();
   },
 });

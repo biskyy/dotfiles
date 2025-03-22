@@ -6,6 +6,7 @@ import {
   property,
   readFileAsync,
   register,
+  signal,
 } from "astal";
 
 const get = (args: string): number => Number(exec(`brightnessctl ${args}`));
@@ -32,6 +33,9 @@ export default class Brightness extends GObject.Object {
     ? (get(`--device ${screen} get`) / (get(`--device ${screen} max`) || 1)) *
       100
     : 0;
+
+  @signal(Number)
+  declare screenChanged: (value: Number) => void;
 
   @property(Number)
   get kbd(): number {
@@ -63,7 +67,8 @@ export default class Brightness extends GObject.Object {
 
     execAsync(`brightnessctl set ${percent}% -d ${screen} -q`).then(() => {
       this.#screen = percent;
-      this.notify("screen");
+      //this.notify("screen");
+      //this.emit("screen-changed", percent);
     });
   }
 
@@ -77,11 +82,12 @@ export default class Brightness extends GObject.Object {
       const v = await readFileAsync(f);
       this.#screen = (Number(v) / this.#screenMax) * 100;
       this.notify("screen");
+      this.emit("screen-changed", (Number(v) / this.#screenMax) * 100);
     });
 
     monitorFile(kbdPath, async (f) => {
       const v = await readFileAsync(f);
-      this.#kbd = Number(v) / this.#kbdMax;
+      this.#kbd = Number(v);
       this.notify("kbd");
     });
   }

@@ -283,7 +283,7 @@ menubar menuitem {
   padding: 4px;
 }
 
-@keyframes flyin-unsgby9 {
+@keyframes flyin-uays90z {
   0% {
     margin-right: -160px;
   }
@@ -297,7 +297,7 @@ menubar menuitem {
     margin-right: 0px;
   }
 }
-@keyframes fade-unsgby9 {
+@keyframes fade-uays90z {
   0% {
     opacity: 0;
   }
@@ -306,7 +306,7 @@ menubar menuitem {
   }
 }
 .powermenu.panel.create > .content {
-  animation: flyin-unsgby9 500ms, fade-unsgby9 500ms;
+  animation: flyin-uays90z 500ms, fade-uays90z 500ms;
 }
 .powermenu .content {
   padding: 1px;
@@ -346,7 +346,7 @@ menubar menuitem {
   color: #e8f8f2;
   text-shadow: 0px 0px 10px #0a0f0d, 0px 0px 5px #0a0f0d;
 }
-@keyframes flyin-unsgby9 {
+@keyframes flyin-uays90z {
   0% {
     margin-right: -80px;
   }
@@ -361,7 +361,7 @@ menubar menuitem {
   }
 }
 .powermenu .content .power-button:hover .transition-text {
-  animation: flyin-unsgby9 500ms;
+  animation: flyin-uays90z 500ms;
 }
 .powermenu .content .power-button .transition-text {
   color: transparent;
@@ -466,7 +466,7 @@ menubar menuitem {
   color: #888888;
 }
 
-@keyframes flyin-unsgbz4 {
+@keyframes flyin-uays91z {
   0% {
     margin-top: -25px;
   }
@@ -480,7 +480,7 @@ menubar menuitem {
     margin-top: 55px;
   }
 }
-@keyframes fade-unsgbz4 {
+@keyframes fade-uays91z {
   0% {
     opacity: 0;
   }
@@ -489,7 +489,7 @@ menubar menuitem {
   }
 }
 .panel.audio.create > .content {
-  animation: flyin-unsgbz4 500ms, fade-unsgbz4 500ms;
+  animation: flyin-uays91z 500ms, fade-uays91z 500ms;
 }
 .panel.audio .content {
   min-width: 550px;
@@ -546,7 +546,43 @@ menubar menuitem {
   min-width: 10px;
 }
 
-@keyframes flyin-unsgbzb {
+.osd .box {
+  background-image: url("/home/biskyy/.config/ags/src/assets/ags_photo.png");
+  background-size: 300% 300%;
+  background-position: 25% 25%;
+  margin: 4rem;
+  background-color: blue;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0a0f0d;
+}
+.osd .box .icon-box {
+  min-width: 3rem;
+}
+.osd .box .icon-box label {
+  text-shadow: 0 0 5px #0a0f0d, 0 0 5px #0a0f0d;
+  font-size: 1.5rem;
+}
+.osd .box .bar-box contents {
+  box-shadow: 0 0 10px #0a0f0d;
+  min-width: 200px;
+  background-color: rgba(50.5, 114.5, 89, 0.5);
+  border-radius: 5px;
+}
+.osd .box .bar-box contents highlight {
+  min-height: 9px;
+  background-color: #5bd6a5;
+  border-radius: 5px;
+  min-width: 10px;
+}
+.osd .box .label-box {
+  min-width: 3rem;
+}
+.osd .box .label-box label {
+  text-shadow: 0 0 5px #0a0f0d, 0 0 5px #0a0f0d;
+}
+
+@keyframes flyin-uays92x {
   0% {
     margin-top: -80px;
   }
@@ -560,7 +596,7 @@ menubar menuitem {
     margin-top: 0px;
   }
 }
-@keyframes fade-unsgbzb {
+@keyframes fade-uays92x {
   0% {
     opacity: 0;
   }
@@ -569,7 +605,7 @@ menubar menuitem {
   }
 }
 .panel.create > .content {
-  animation: flyin-unsgbzb 500ms, fade-unsgbzb 500ms;
+  animation: flyin-uays92x 500ms, fade-uays92x 500ms;
 }
 
 .panel.destroy > .content {

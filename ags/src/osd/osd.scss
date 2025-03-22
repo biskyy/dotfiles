@@ -1,0 +1,67 @@
+@use "sass:color";
+@use "sass:string";
+@use "lib/colors.scss";
+@use "lib/animations.scss";
+
+.osd .box {
+  background-image: url("/home/biskyy/.config/ags/src/assets/ags_photo.png");
+  background-size: 300% 300%;
+  background-position: 25% 25%;
+
+  margin: 4rem;
+  background-color: blue;
+  padding: 20px;
+  border-radius: 10px;
+
+  box-shadow: 0 0 15px colors.$background;
+
+  .icon-box {
+    // background-color: black;
+    min-width: 3rem;
+    // padding: 0px 10px;
+
+    label {
+      text-shadow: 0 0 5px colors.$background,
+        0 0 5px colors.$background;
+      // background-color: red;
+      font-size: 1.5rem;
+    }
+  }
+
+  .bar-box {
+    // background-color: red;
+
+
+    contents {
+      box-shadow: 0 0 10px colors.$background;
+      min-width: 200px;
+      background-color: color.adjust($color: color.mix(colors.$accent,
+            colors.$background),
+          $alpha: -0.5);
+      border-radius: 5px;
+
+      // slider {
+      // background-color: colors.$secondary;
+      // border-radius: 5px;
+      // }
+
+      highlight {
+        min-height: 9px;
+        background-color: colors.$accent;
+        border-radius: 5px;
+        min-width: 10px;
+      }
+    }
+  }
+
+  .label-box {
+    // background-color: green;
+    min-width: 3rem;
+
+    label {
+      // background-color: magenta;
+      text-shadow: 0 0 5px colors.$background,
+        0 0 5px colors.$background;
+    }
+  }
+}

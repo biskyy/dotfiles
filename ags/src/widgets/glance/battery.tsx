@@ -125,14 +125,16 @@ export default function GlanceBattery() {
           drawValue={false}
           min={0}
           max={100}
-          value={screenBrightness.as((value) => Math.floor(value))}
+          value={screenBrightness}
           step={1}
+          onDragged={({ value }) => (brightness.screen = value)}
           setup={(self) => {
             self.value = Math.floor(screenBrightness.get());
-            self.connect(
-              "value-changed",
-              (self) => (brightness.screen = self.value),
-            );
+            //self.hook(
+            //  brightness,
+            //  "screen-changed",
+            //  (self, value) => (self.value = Math.floor(value)),
+            //);
           }}
         />
       </box>

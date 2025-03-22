@@ -8,6 +8,7 @@
 @use "widgets/powermenu/powermenu.scss";
 @use "widgets/glance/glance.scss";
 @use "widgets/audio/audio.scss";
+@use "osd/osd.scss";
 
 .panel.create>.content {
   $id: string.unique-id();
