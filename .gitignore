@@ -3,6 +3,9 @@
 !README.md
 !.gitignore
 
+!etc/
+!etc/**
+
 !mimeapps.list
 
 !yay/
