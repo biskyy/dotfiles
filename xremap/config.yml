@@ -1,13 +1,14 @@
+virtual_modifiers:
+  - CapsLock
 modmap:
-  - name: CapsLock to Esc/Ctrl
-    remap:
+  - remap:
       CapsLock:
-        held: Super_R
+        held: CapsLock
         alone: Esc
 keymap:
-  - name: Ctrl+IJKL to Arrow Keys
+  - name: Global
     remap:
-      Super-k: Up
-      Super-j: Down
-      Super-h: Left
-      Super-l: Right
+      CapsLock-h: Left
+      CapsLock-j: Down
+      CapsLock-k: Up
+      CapsLock-l: Right
