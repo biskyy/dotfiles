@@ -30,7 +30,7 @@ export default class TLP extends GObject.Object {
     super({ updateFrequency: 1000, mode: TLPMode.BATTERY } as any);
 
     interval(this.updateFrequency, () =>
-      execAsync("sudo tlp-stat -m").then((result) => {
+      execAsync("tlp-stat -m").then((result) => {
         this.manual = result.includes("manual") ? true : false;
         if (this.mode !== result) {
           this.mode = <TLPMode>result.replace(" (manual)", "").trim();
