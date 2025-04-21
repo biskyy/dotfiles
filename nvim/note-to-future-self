@@ -1,0 +1,16 @@
+# lsp and formatters
+install lsp and formatter through :Mason
+
+put lsp into lua/configs/lspconfig.lua besides the other ones
+put formatter into lua/configs/conform.lua
+
+# lazy plugin manager
+to install a plugin go into /lua/plugins/init.lua and put it there then :Lazy sync
+
+# others
+options into options.lua
+
+keybindings into mappings.lua
+
+nvchad specific configuration into chadrc.lua
+

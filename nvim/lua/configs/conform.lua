@@ -1,18 +1,24 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { "prettier" },
-    html = { "prettier" },
-    javascript = { "prettierd", "prettier", stop_after_first = true },
-    javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-    typescript = { "prettierd", "prettier", stop_after_first = true },
-    typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-    ["_"] = { "prettierd" },
+    css = { "prettierd" },
+    html = { "prettierd" },
+    javascript = { "prettierd" },
+    javascriptreact = { "prettierd" },
+    typescript = { "prettierd" },
+    typescriptreact = { "prettierd" },
+    cpp = { "clang-format" },
+
+    -- Use the "*" filetype to run formatters on all filetypes.
+    ["*"] = { "codespell" },
+    -- Use the "_" filetype to run formatters on filetypes that don't
+    -- have other formatters configured.
+    ["_"] = { "trim_whitespace" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
+    -- timeout_ms = 500,
     lsp_fallback = true,
   },
 }
