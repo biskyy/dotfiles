@@ -40,3 +40,4 @@ application/pdf=zen.desktop;
 x-directory/normal=thunar.desktop;
 inode/directory=thunar.desktop;
 application/x-zerosize=nvim.desktop;
+video/x-matroska=org.kde.gwenview.desktop;
