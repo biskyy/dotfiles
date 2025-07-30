@@ -1,5 +1,17 @@
 palette = "theme"
 
+format = """
+$username\
+$directory\
+$hostname\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$python\
+$character"""
+
 [palettes.theme]
 black = '#090618'
 red = '#c34043'
@@ -10,17 +22,6 @@ magenta = '#957fb8'
 cyan = '#6a9589'
 white = '#c8c093'
 
-format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$cmd_duration\
-$line_break\
-$python\
-$character"""
 
 [username]
 style_user = 'blue bold'
