@@ -1,4 +1,4 @@
-local map = vim.keymap.set
+local utils = require "custom.mappings.utils"
 
 -- masterfully crafted by chatgpt
 
@@ -36,7 +36,7 @@ local function wordify_pattern(text)
 end
 
 -- Main mapping
-vim.keymap.set("v", "//", function()
+utils.map("v", "/s", function()
   local saved_reg = vim.fn.getreg '"'
   vim.cmd 'normal! "zy' -- Yank selection into "z
   local text = vim.fn.getreg "z"
@@ -48,4 +48,4 @@ vim.keymap.set("v", "//", function()
   vim.cmd "normal! n"
   vim.cmd "normal! N"
   vim.fn.setreg('"', saved_reg)
-end, { noremap = true, silent = true })
+end, vim.tbl_extend("force", utils.default_opts, { desc = "search for selected text" }))

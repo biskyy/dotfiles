@@ -8,6 +8,7 @@ local options = {
     typescript = { "prettierd" },
     typescriptreact = { "prettierd" },
     cpp = { "clang-format" },
+    rust = { "rustfmt" },
 
     -- Use the "*" filetype to run formatters on all filetypes.
     ["*"] = { "codespell" },

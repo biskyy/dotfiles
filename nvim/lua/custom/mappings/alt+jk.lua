@@ -1,11 +1,9 @@
-local map = vim.keymap.set
-
-local opts = { noremap = true, silent = true }
+local utils = require "custom.mappings.utils"
 
 -- Alt + j to move the current line/selection down
-map("n", "<A-j>", ":m+1<CR>==", opts)
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+utils.map("n", "<A-j>", ":m+1<CR>==", utils.default_opts)
+utils.map("v", "<A-j>", ":m '>+1<CR>gv=gv", utils.default_opts)
 
 -- Alt + k to move the current line/selection up
-map("n", "<A-k>", ":m-2<CR>==", opts)
-map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+utils.map("n", "<A-k>", ":m-2<CR>==", utils.default_opts)
+utils.map("v", "<A-k>", ":m '<-2<CR>gv=gv", utils.default_opts)
