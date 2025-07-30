@@ -50,6 +50,8 @@ class _PanelManager {
       this.logAndExit(`PanelID "${panelID}" not found in registry.`);
     }
 
+    console.log("window got got from the registry");
+
     /* - If the same panel is already active:
      *   - Check if arguments (args) are provided:
      *     - If args are provided, pass them to the window function.
@@ -70,8 +72,16 @@ class _PanelManager {
       this.closePanel(this.activePanel.get() as PanelID);
 
     this.toggleOverlayFor(panelID);
-    App.add_window(windowToSpawn(args) as Widget.Window);
+
+    console.log("window got it's overlay toggled");
+
+    App.add_window(windowToSpawn(args) as Gtk.Window);
+
+    console.log("window got added to screen");
+
     this.activePanel.set(panelID);
+
+    console.log("window got set to active internally");
   }
 
   /**

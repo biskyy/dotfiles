@@ -37,50 +37,50 @@ const MediaHeader = ({
 
   return (
     <box vertical spacing={5}>
-      <box className="header">
-        <centerbox
-          css="min-width: 1.5em; padding-right: 0.5em;"
-          centerWidget={
-            <button
-              onClick={(_, event) =>
-                isPrimaryClick(event) && (endpoint!.mute = !endpoint!.mute)
-              }
-              className={bind(endpoint!, "mute").as((mute) =>
-                mute ? "icon danger" : "icon",
-              )}
-              label={icon}
-            />
-          }
-        />
-        <button
-          label={bind(endpoint!, "description").as((desc) =>
-            truncate(desc, 50),
-          )}
-        />
-        <box expand />
-        <box>
-          <label
-            label={bind(endpoint!, "volume").as((vol) =>
-              Math.floor(vol * 100).toString(),
-            )}
-          />
-          <label className="icon icon-pad-l" label="" />
-        </box>
-        {(isSpeaker || isMicrophone) && (
-          <button
-            css="margin-left: 0.5rem;"
-            className="icon"
-            label=""
-            onClick={callback}
-          />
-        )}
-      </box>
-      <slider
-        className="slider"
-        drawValue={false}
-        value={bind(endpoint!, "volume")}
-        onDragged={({ value }) => (endpoint!.volume = value)}
-      />
+      {/* <box className="header"> */}
+      {/*   <centerbox */}
+      {/*     css="min-width: 1.5em; padding-right: 0.5em;" */}
+      {/*     centerWidget={ */}
+      {/*       <button */}
+      {/*         onClick={(_, event) => */}
+      {/*           isPrimaryClick(event) && (endpoint!.mute = !endpoint!.mute) */}
+      {/*         } */}
+      {/*         className={bind(endpoint!, "mute").as((mute) => */}
+      {/*           mute ? "icon danger" : "icon", */}
+      {/*         )} */}
+      {/*         label={icon} */}
+      {/*       /> */}
+      {/*     } */}
+      {/*   /> */}
+      {/*   <button */}
+      {/*     label={bind(endpoint!, "description").as((desc) => */}
+      {/*       truncate(desc, 50), */}
+      {/*     )} */}
+      {/*   /> */}
+      {/*   <box expand /> */}
+      {/*   <box> */}
+      {/*     <label */}
+      {/*       label={bind(endpoint!, "volume").as((vol) => */}
+      {/*         Math.floor(vol * 100).toString(), */}
+      {/*       )} */}
+      {/*     /> */}
+      {/*     <label className="icon icon-pad-l" label="" /> */}
+      {/*   </box> */}
+      {/*   {(isSpeaker || isMicrophone) && ( */}
+      {/*     <button */}
+      {/*       css="margin-left: 0.5rem;" */}
+      {/*       className="icon" */}
+      {/*       label="" */}
+      {/*       onClick={callback} */}
+      {/*     /> */}
+      {/*   )} */}
+      {/* </box> */}
+      {/* <slider */}
+      {/*   className="slider" */}
+      {/*   drawValue={false} */}
+      {/*   value={bind(endpoint!, "volume")} */}
+      {/*   onDragged={({ value }) => (endpoint!.volume = value)} */}
+      {/* /> */}
     </box>
   );
 };
@@ -91,13 +91,13 @@ interface AudioDeviceProps extends DeviceButtonProps {
 
 const AudioDevice = ({
   icon,
-  endpoint,
   mediaClass,
   callback,
   showRevealer,
 }: AudioDeviceProps) => {
   const isSpeaker = mediaClass === AstalWp.MediaClass.AUDIO_SPEAKER;
   const isMicrophone = mediaClass === AstalWp.MediaClass.AUDIO_MICROPHONE;
+  let endpoint: AstalWp.Endpoint;
   let endpoints: keyof AstalWp.Audio;
 
   switch (mediaClass) {
@@ -111,13 +111,9 @@ const AudioDevice = ({
       endpoints = "recorders";
       break;
 
-    case AstalWp.MediaClass.AUDIO_STREAM:
-      break;
-
-    case AstalWp.MediaClass.AUDIO_RECORDER:
-      break;
-
     default:
+      endpoint = wp?.audio.defaultSpeaker!;
+      endpoints = "streams";
       break;
   }
 
@@ -142,7 +138,7 @@ const AudioDevice = ({
         revealChild={showRevealer()}
       >
         <box vertical spacing={5}>
-          {bind(wp?.audio!, endpoints).as((streams) => {
+          {bind(wp?.audio, endpoints).as((streams) => {
             if (streams.length === 0)
               return <label label="there are no recorders" />;
 
@@ -178,6 +174,8 @@ export default function Audio() {
     <Panel
       name={PanelID.AUDIO}
       anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
+      layer={Astal.Layer.TOP}
+      exclusivity={Astal.Exclusivity.NORMAL}
       box={{
         spacing: 12,
         vertical: true,

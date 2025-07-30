@@ -283,7 +283,7 @@ menubar menuitem {
   padding: 4px;
 }
 
-@keyframes flyin-uays90z {
+@keyframes flyin-ufzufb7 {
   0% {
     margin-right: -160px;
   }
@@ -297,7 +297,7 @@ menubar menuitem {
     margin-right: 0px;
   }
 }
-@keyframes fade-uays90z {
+@keyframes fade-ufzufb7 {
   0% {
     opacity: 0;
   }
@@ -306,7 +306,7 @@ menubar menuitem {
   }
 }
 .powermenu.panel.create > .content {
-  animation: flyin-uays90z 500ms, fade-uays90z 500ms;
+  animation: flyin-ufzufb7 500ms, fade-ufzufb7 500ms;
 }
 .powermenu .content {
   padding: 1px;
@@ -346,7 +346,7 @@ menubar menuitem {
   color: #e8f8f2;
   text-shadow: 0px 0px 10px #0a0f0d, 0px 0px 5px #0a0f0d;
 }
-@keyframes flyin-uays90z {
+@keyframes flyin-ufzufb7 {
   0% {
     margin-right: -80px;
   }
@@ -361,7 +361,7 @@ menubar menuitem {
   }
 }
 .powermenu .content .power-button:hover .transition-text {
-  animation: flyin-uays90z 500ms;
+  animation: flyin-ufzufb7 500ms;
 }
 .powermenu .content .power-button .transition-text {
   color: transparent;
@@ -466,7 +466,7 @@ menubar menuitem {
   color: #888888;
 }
 
-@keyframes flyin-uays91z {
+@keyframes flyin-ufzufc1 {
   0% {
     margin-top: -25px;
   }
@@ -480,7 +480,7 @@ menubar menuitem {
     margin-top: 55px;
   }
 }
-@keyframes fade-uays91z {
+@keyframes fade-ufzufc1 {
   0% {
     opacity: 0;
   }
@@ -489,7 +489,7 @@ menubar menuitem {
   }
 }
 .panel.audio.create > .content {
-  animation: flyin-uays91z 500ms, fade-uays91z 500ms;
+  animation: flyin-ufzufc1 500ms, fade-ufzufc1 500ms;
 }
 .panel.audio .content {
   min-width: 550px;
@@ -582,7 +582,7 @@ menubar menuitem {
   text-shadow: 0 0 5px #0a0f0d, 0 0 5px #0a0f0d;
 }
 
-@keyframes flyin-uays92x {
+@keyframes flyin-ufzufcy {
   0% {
     margin-top: -80px;
   }
@@ -596,7 +596,7 @@ menubar menuitem {
     margin-top: 0px;
   }
 }
-@keyframes fade-uays92x {
+@keyframes fade-ufzufcy {
   0% {
     opacity: 0;
   }
@@ -605,7 +605,7 @@ menubar menuitem {
   }
 }
 .panel.create > .content {
-  animation: flyin-uays92x 500ms, fade-uays92x 500ms;
+  animation: flyin-ufzufcy 500ms, fade-ufzufcy 500ms;
 }
 
 .panel.destroy > .content {

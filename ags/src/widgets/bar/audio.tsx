@@ -44,9 +44,10 @@ export default function BarAudio() {
           handleVolumeScroll(event, wp.audio.defaultSpeaker)
         }
         onClick={(_, event) => {
-          if (isPrimaryClick(event)) PanelManager.togglePanel(PanelID.AUDIO);
-          else if (isMiddleClick(event))
-            wp.audio.defaultSpeaker.mute = !wp.audio.defaultSpeaker.mute;
+          PanelManager.togglePanel(PanelID.AUDIO);
+          // if (isPrimaryClick(event)) PanelManager.togglePanel(PanelID.AUDIO);
+          // else if (isMiddleClick(event))
+          //   wp.audio.defaultSpeaker.mute = !wp.audio.defaultSpeaker.mute;
         }}
       >
         <box>

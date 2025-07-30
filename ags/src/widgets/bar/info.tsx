@@ -38,6 +38,7 @@ const Battery = () => {
           label={bind(battery, "percentage").as(
             (p) => ` ${Math.floor(p * 100)}`,
           )}
+          // label="100%"
         />
         <label className="icon icon-pad-l" label="" />
       </box>
